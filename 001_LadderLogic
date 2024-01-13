@@ -1,0 +1,16 @@
+rule AllenBradley_L5K_File {
+    meta:
+        description = "Detect Allen-Bradley Ladder Logic .L5K Files"
+        author = "John Jarocki"
+        reference = ""
+        md5 = ""
+
+    strings:
+        $header = "FILE SIGNATURE = \"L5K\""
+        $version = /Version \d{1,2}\.\d{1,2}/
+        $ladder_start = /^SECTION LADDER/ nocase
+        $ladder_end = /^END_SECTION/ nocase
+
+    condition:
+        all of them
+}
