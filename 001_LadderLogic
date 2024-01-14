@@ -1,16 +1,20 @@
-rule AllenBradley_L5K_File {
+rule jcj_AllenBradley_L5K_File {
     meta:
-        description = "Detect Allen-Bradley Ladder Logic .L5K Files"
+        description = "Detect Allen-Bradley (Rockwell Automation) Ladder Logic .L5K Structured Text files"
         author = "John Jarocki"
-        reference = ""
+        reference = "https://literature.rockwellautomation.com/idc/groups/literature/documents/pm/1756-pm007_-en-p.pdf"
         md5 = ""
 
     strings:
-        $header = "FILE SIGNATURE = \"L5K\""
-        $version = /Version \d{1,2}\.\d{1,2}/
-        $ladder_start = /^SECTION LADDER/ nocase
-        $ladder_end = /^END_SECTION/ nocase
-
+        $endif      = "END_IF;" nocase
+        $endcase    = "END_CASE;" nocase
+        $endfor     = "END_FOR;" nocase
+        $endwhile   = "END_WHILE;" nocase
+        $endrepeat  = "END_REPEAT;" nocase
+        $endregion  = "#endregion" nocase
+        $version  = /Version \d{1,2}\.\d{1,2}/
+        $typedint   = "DINT"
+        $typesint   = "SINT"
     condition:
         all of them
 }
