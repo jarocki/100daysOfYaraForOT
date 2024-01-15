@@ -13,7 +13,7 @@ rule jcjot_IEC1131_Structured_Text_file {
         $endrepeat  = "END_REPEAT" nocase
         $start      = "PROGRAM " nocase
         $finish     = "END_PROGRAM" nocase
-        $assign     = "\s*:=\s*" nocase
+        $assign     = /\w\s*:=\s*\w/
     condition:
         $start and $finish and $assign and 1 of ($end*)
 }
