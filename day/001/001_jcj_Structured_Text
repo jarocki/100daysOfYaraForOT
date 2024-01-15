@@ -1,9 +1,9 @@
-rule jcj_Structured_Text_file {
+rule jcjot_001_Structured_Text_file {
     meta:
-        description = "Detect Allen-Bradley (Rockwell Automation) Ladder Logic .L5K Structured Text files"
+        description = "Allen-Bradley (Rockwell Automation) Ladder Logic .L5K Structured Text files"
         author = "John Jarocki"
         reference = "https://literature.rockwellautomation.com/idc/groups/literature/documents/pm/1756-pm007_-en-p.pdf"
-        md5 = ""
+        md5 = "e5846301f4fd5a6ec6b2f1768ac648ad"
 
     strings:
         $endif      = "END_IF;" nocase
@@ -11,44 +11,7 @@ rule jcj_Structured_Text_file {
         $endfor     = "END_FOR;" nocase
         $endwhile   = "END_WHILE;" nocase
         $endrepeat  = "END_REPEAT;" nocase
-        $assign     = " := " nocase
+        $assign     = "\s*:=\s*" nocase
     condition:
         $assign and 1 of ($end*)
-}
-
-rule jcj_AllenBradley_L5K_version {
-    meta:
-        description = "Detect Allen-Bradley (Rockwell Automation) Ladder Logic .L5K Structured Text files"
-        author = "John Jarocki"
-        reference = "https://literature.rockwellautomation.com/idc/groups/literature/documents/pm/1756-pm007_-en-p.pdf"
-        md5 = ""
-
-    strings:
-        $version    = /Version\s+:=\s+RSLogix[^\r\n]v[\d\.]+\b/
-
-    condition:
-        $version
-}
-
-rule jcj_Unicode_BOM {
-    meta:
-        description = "Looks for the UTF-8 Byte Order Mark (BOM)"
-
-    strings:
-        $bom = { EF BB BF }
-
-    condition:
-        $bom at 0
-}
-
-rule jcj_AllenBradley_L5X {
-    meta:
-        description = "Allen-Bradley (Rockwell Automation) .L5X XML Structured Text file"
-
-    strings:
-        $xml   = "<?xml "
-        $rslgx = "<RSLogix5000Content "
-
-    condition:
-        $xml in ( 0 .. 3) and $rslgx
 }
