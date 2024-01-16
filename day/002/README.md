@@ -25,4 +25,11 @@ For example, here is a Version Statement:
 **********************************************)
 ```
 
+Today's signature will match these bits from the Version Statement to give more context.
+Check back to this particular signature soon, because I actually want to update it
+to extract more of the metadata from the .L5K, such as the device, import/export tool version,
+main program name, etc.
+
+#### Next... DAY 003: [Allen-Bradley .L5X XML Structured Text](https://github.com/jarocki/100daysOfYaraForOT/tree/main/day/003)
+
 
