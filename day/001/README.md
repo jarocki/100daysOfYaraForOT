@@ -1,6 +1,6 @@
-# IEC 61131-3 Structured Text files
+# DAY 001: IEC 61131-3 Structured Text files
 
-The IEC 61131 standard for Programmable Logic Controllers (PLC) defines five programming languages for PLC devices:
+The IEC 61131 standard for Programmable Logic Controllers (PLC) defines five programming languages for PLC devices in part 3 [IEC 61131-3](https://en.wikipedia.org/wiki/IEC_61131-3):
 
 1. Structured Text (ST or STX): A programming language based on Pascal
 2. Ladder Diagram (or Ladder Logic)
