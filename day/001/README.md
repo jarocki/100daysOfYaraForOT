@@ -34,4 +34,5 @@ END_PROGRAM;
 The semicolon is requred to end all statements, but some implementations ignore that requirement,
 just to make our lives more difficult. :-)
 
-#### NEXT UP:  Day 002 -- Allen-Bradley Structured Text (.L5K files)
+#### NEXT UP:  Day 002: [Allen-Bradley L5K Structured Text](https://github.com/jarocki/100daysOfYaraForOT/tree/main/day/002)
+
