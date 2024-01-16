@@ -5,10 +5,24 @@ Yes, ST is Structured Text, but is it really as structured as eXtensible Markup 
 Allen-Bradley supports and XML flavor of Structued Text (.L5X) that looks something like this:
 
 ```
-
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--DINT Bit Counter-->
+<RSLogix5000Content SchemaRevision="1.0" SoftwareRevision="20.01" TargetName="BCNT" TargetType="AddOnInstructionDefinition" TargetRevision="1.0 " TargetLastEdited="2023-01-15T19:55:29.520Z" ContainsContext="true" Owner="jcj" ExportDate="Mon Jan 15 20:02:08 2023" ExportOptions="References DecoratedData Context Dependencies ForceProtectedEncoding AllProjDocTrans">
+<Controller Use="Context" Name="Test">
+<DataTypes Use="Context">
+</DataTypes>
+<AddOnInstructionDefinitions Use="Context">
+   [ ... ]
+</AddOnInstructionDefinitions>
+</Controller>
+</RSLogix5000Content>
 ```
 
-#### Next:  DAY 004... love for other vendors
+This is actually good for us because:
+a) It makes it really easy to identify with tags like <RSLogix5000Content> and
+b) We can extract even more metadata about the PLC environment.
+
+#### Next:  DAY 004... some love for other ST flavors
 
 ---
 
