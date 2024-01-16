@@ -63,4 +63,4 @@ You can see this below:
 00000000: efbb bf3c 3f78 6d6c                      ...<?xml
 ```
 
-This is why the search for the XML filemagic has to be within the first 4 bytes.
+This is why the search for the XML filemagic has to be within the first 4 bytes.  The jcjot_UTF8_BOM rule will detect the Byte Order Mark.
