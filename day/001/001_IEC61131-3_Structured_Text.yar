@@ -6,7 +6,7 @@ rule jcjot_IEC1131_Structured_Text_file {
         md5 = "e5846301f4fd5a6ec6b2f1768ac648ad"
     strings:
         $start      = "PROGRAM " nocase
-        $assign     = /\w\s*:=\s*\w/
+        $assign     = /\w\s{0,10}:=\s{0,10}\w/
         $endif      = "END_IF" nocase
         $finish     = "END_PROGRAM" nocase
     condition:
