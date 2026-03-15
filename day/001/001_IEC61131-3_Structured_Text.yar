@@ -1,4 +1,4 @@
-rule jcjot_IEC1131_Structured_Text_file {
+rule jcj_OT_IEC1131_Structured_Text_file {
     meta:
         description = "Allen-Bradley (Rockwell Automation) Ladder Logic .L5K Structured Text files"
         author = "John Jarocki"

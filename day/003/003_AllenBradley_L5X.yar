@@ -1,4 +1,4 @@
-rule jcjot_AllenBradley_L5X {
+rule jcj_OT_AllenBradley_L5X {
     meta:
         description = "Allen-Bradley (Rockwell Automation) .L5X XML Structured Text file"
 
@@ -10,7 +10,7 @@ rule jcjot_AllenBradley_L5X {
         $xml in ( 0 .. 3) and $rslgx
 }
 
-rule jcjot_UTF8_BOM {
+rule jcj_OT_UTF8_BOM {
     meta:
         description = "Looks for the UTF-8 Byte Order Mark (BOM)"
 

@@ -1,4 +1,4 @@
-rule jcjot_AllenBradley_L5K_version {
+rule jcj_OT_AllenBradley_L5K_Version {
     meta:
         description = "Find version statement in Allen-Bradley (Rockwell Automation) .L5K files"
         author = "John Jarocki"
@@ -8,7 +8,7 @@ rule jcjot_AllenBradley_L5K_version {
     strings:
         $l5k_vstmt  = "Import-Export"
         $version    = /Version\s{0,10}:=\s{0,10}RSLogix[^\r\n]{0,100}[\r\n]/
-        $owner      = /Owner\s{0,10}:=\s{0,10}[^\r\n,]{0,100}[\r\n]/
+        $owner      = /Owner\s{0,10}:=\s{0,10}[^\r\n]{0,100}[\r\n]/
         $date       = /Exported\s{0,10}:=\s{0,10}[^\r\n]{0,100}[\r\n]/
 
     condition:
